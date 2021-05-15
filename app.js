@@ -3,14 +3,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 const indexRouter = require('./routes/index');
-const homeRouter = require('./routes/home');
 
 // route setting
-app.use('/', indexRouter);
-app.use('/', homeRouter);
-
-console.log("Hello NodeJs")
-console.log("Hello World")
+app.use('/index', indexRouter);
 
 // create server
 app.listen(port, () => {

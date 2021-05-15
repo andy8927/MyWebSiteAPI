@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', (req, res, next) => {
-    console.log('Hello NodeJs')
-    res.send('Hello NodeJs')
+    res.send('This is Index Page')
+})
+
+router.get('/user', (req, res, next) => {
+	res.send('This is User Page')
 })
 
 module.exports = router;
