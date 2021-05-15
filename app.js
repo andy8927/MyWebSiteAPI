@@ -9,7 +9,8 @@ const homeRouter = require('./routes/home');
 app.use('/', indexRouter);
 app.use('/', homeRouter);
 
-console.log("Hello")
+console.log("Hello NodeJs")
+console.log("Hello World")
 
 // create server
 app.listen(port, () => {
