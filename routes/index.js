@@ -6,6 +6,7 @@ router.get('/user', handleIndexUser)
 
 
 function handleIndex(req, res, next){
+    console.log(req.body)
     res.send("This is Index Page")
 }
 
