@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', (req, res, next) => {
-    res.send('This is Index Page')
-})
+router.get('/', handleIndex)
+router.get('/user', handleIndexUser)
 
-router.get('/user', (req, res, next) => {
-	res.send('This is User Page')
-})
+
+function handleIndex(req, res, next){
+    res.send("This is Index Page")
+}
+
+function handleIndexUser(req, res, next){
+    res.send("This is Index User Page")
+}
 
 module.exports = router;
