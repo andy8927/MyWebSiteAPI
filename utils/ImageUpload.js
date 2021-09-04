@@ -26,6 +26,17 @@ function uploadImageConfS3() {
 
     const folder = Date.now().toString();
     return multer({
+        limit: {
+            // 限制上傳檔案的大小為 1MB
+            fileSize: 1000000
+        },
+        fileFilter(req, file, cb) {
+            // 只接受三種圖片格式
+            if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
+                cb(null, false);
+            }
+            cb(null, true);
+        },
         storage: multerS3({
             s3: s3,
             bucket: `${process.env.S3_BUCKET}/images/products/${folder}`,
